@@ -1,0 +1,80 @@
+.outside1 {
+  width: 400px;
+  height: 400px;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inside1 {
+  background-color: pink;
+  height: 200px;
+  width: 200px;
+}
+
+.outside2 {
+  width: 400px;
+  height: 400px;
+  background-color: #ccc;
+  display: flex;
+}
+
+.inside2 {
+  background-color: pink;
+  height: 200px;
+  width: 200px;
+  margin: auto;
+}
+
+.outside4 {
+  display: grid;
+  place-content: center;
+  background-color: #ccc;
+}
+
+.inside4 {
+    color: black;
+}
+
+.outside5 {
+  width: 400px;
+  height: 400px;
+  background-color: #ccc;
+  position: relative;
+}
+
+.inside5 {
+  background-color: pink;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.outside7 {
+  width: 400px;
+  height: 400px;
+  background-color: #ccc;
+  text-align: center;
+}
+
+.inside7 {
+  background-color: pink;
+  line-height: 400px;
+}
+
+.outside1, .outside2, .outside3, .outside5, .outside7 {
+    max-width: 100%;
+    width: min(400px, 90vw);
+    height: min(400px, 90vw);
+}
+
+.element {
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: pink;
+}

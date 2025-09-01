@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How to center a div</title>
+
+    <link rel="stylesheet" href="styles/index.css">
+
     <style>
         * {
             margin: 0;
@@ -202,7 +205,7 @@
         <div class="methods-grid">
             <div class="method-card first-way">
                 <h3>Using Flexbox</h3>
-                
+
                 <h4>HTML</h4>
                 <pre>
                     <code>
@@ -229,6 +232,13 @@
     width: 200px;
 }</code>
                 </pre>
+
+                <h4>Example</h4>
+
+                <div class="outside1">
+                    <div class="inside1">inside</div>
+                </div>
+
             </div>
 
             <div class="method-card second-way">
@@ -259,6 +269,13 @@
     width: 200px;
 }</code>
                 </pre>
+
+                <h4>Example</h4>
+
+                <div class="outside2">
+                    <div class="inside2">inside</div>
+                </div>
+
             </div>
 
             <div class="method-card third-way">
@@ -273,12 +290,20 @@
     margin-right: auto;
 }</code>
                 </pre>
+
+                <h4>Example</h4>
+
+                <div class="outside3">
+                    <div class="element">inside</div>
+                </div>
+
             </div>
 
             <div class="method-card fourth-way">
                 <h3>Using grid</h3>
 
-                <p>Besides the method above, you can also set margin-left and right to auto, so the browser will automatically center the element specified.</p>
+                <p>Besides the method above, you can also set margin-left and right to auto, so the browser will
+                    automatically center the element specified.</p>
 
                 <h4>HTML</h4>
                 <pre>
@@ -296,6 +321,13 @@
     place-content: center;
 }</code>
                 </pre>
+
+                <h4>Example</h4>
+
+                <div class="outside4">
+                    <div class="inside4">inside</div>
+                </div>
+
             </div>
 
             <div class="method-card fifth-way">
@@ -329,6 +361,13 @@
     transform: translate(-50%, -50%);
 }</code>
                 </pre>
+
+                <h4>Example</h4>
+
+                <div class="outside5">
+                    <div class="inside5">inside</div>
+                </div>
+
             </div>
 
             <div class="method-card sixth-way">
@@ -371,6 +410,14 @@
     line-height: 400px;
 }</code>
                 </pre>
+
+                <h4>Example</h4>
+
+                <div class="outside7">
+                    <div class="inside7">inside</div>
+                </div>
+
+
             </div>
         </div>
     </div>
