@@ -191,6 +191,126 @@
                 min-width: auto;
             }
         }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        /* Basis Tabellen-Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+
+        td {
+            color: #333;
+            font-weight: 500;
+        }
+
+        /* Zebra-Streifen für bessere Lesbarkeit */
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:hover {
+            background-color: #e8f4fd;
+            transition: background-color 0.2s ease;
+        }
+
+        /* "Yes" Zellen grün highlighten */
+        td:contains("Yes") {
+            color: #28a745;
+            font-weight: 600;
+        }
+
+        /* Alternative: Spezielle Klasse für Yes/No */
+        .supported {
+            color: #28a745;
+            font-weight: 600;
+        }
+
+        .not-supported {
+            color: #dc3545;
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            table {
+                font-size: 0.9rem;
+            }
+
+            th,
+            td {
+                padding: 8px 10px;
+            }
+        }
+
+        /* Für sehr kleine Bildschirme - Stack Layout */
+        @media (max-width: 600px) {
+
+            table,
+            thead,
+            tbody,
+            th,
+            td,
+            tr {
+                display: block;
+            }
+
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            tr {
+                border: 1px solid #ccc;
+                margin-bottom: 10px;
+                padding: 10px;
+                border-radius: 8px;
+            }
+
+            td {
+                border: none;
+                position: relative;
+                padding-left: 50% !important;
+                padding-top: 8px;
+                padding-bottom: 8px;
+            }
+
+            td:before {
+                content: attr(data-label) ": ";
+                position: absolute;
+                left: 6px;
+                width: 45%;
+                text-align: left;
+                font-weight: 600;
+                color: #667eea;
+            }
+        }
     </style>
 </head>
 
@@ -207,15 +327,33 @@
                 <h3>Using Flexbox</h3>
 
                 <h4>HTML</h4>
-                <pre>
+                <div class="code-container">
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        <svg class="copy-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                        </svg>
+                        Copy
+                    </button>
+                    <pre>
                     <code>
 &lt;div class="outside"&gt;
     &lt;div class="inside"&gt;&lt;/div&gt;
 &lt;/div&gt;</code>
                 </pre>
 
+                </div>
+
                 <h4>CSS</h4>
-                <pre>
+                <div class="code-container">
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        <svg class="copy-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                        </svg>
+                        Copy
+                    </button>
+                    <pre>
                     <code>
 .outside { 
     width: 400px;
@@ -232,9 +370,9 @@
     width: 200px;
 }</code>
                 </pre>
+                </div>
 
                 <h4>Example</h4>
-
                 <div class="outside1">
                     <div class="inside1">inside</div>
                 </div>
@@ -245,15 +383,32 @@
                 <h3>Using flexible display</h3>
 
                 <h4>HTML</h4>
-                <pre>
+                <div class="code-container">
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        <svg class="copy-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                        </svg>
+                        Copy
+                    </button>
+                    <pre>
                     <code>
 &lt;div class="outside"&gt;
     &lt;div class="inside"&gt;inside&lt;/div&gt;
 &lt;/div&gt;</code>
                 </pre>
+                </div>
 
                 <h4>CSS</h4>
-                <pre>
+                <div class="code-container">
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        <svg class="copy-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                        </svg>
+                        Copy
+                    </button>
+                    <pre>
                     <code>
 .outside {
     width: 400px;
@@ -269,6 +424,7 @@
     width: 200px;
 }</code>
                 </pre>
+                </div>
 
                 <h4>Example</h4>
 
@@ -282,7 +438,15 @@
                 <h3>Using margin-inline</h3>
 
                 <h4>CSS</h4>
-                <pre>
+                <div class="code-container">
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        <svg class="copy-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                        </svg>
+                        Copy
+                    </button>
+                    <pre>
                     <code>
 .element {
     max-width: fit-content;
@@ -290,6 +454,7 @@
     margin-right: auto;
 }</code>
                 </pre>
+                </div>
 
                 <h4>Example</h4>
 
@@ -306,21 +471,39 @@
                     automatically center the element specified.</p>
 
                 <h4>HTML</h4>
-                <pre>
+                <div class="code-container">
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        <svg class="copy-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                        </svg>
+                        Copy
+                    </button>
+                    <pre>
                     <code>
 &lt;div class="outside"&gt;
     &lt;div class="inside"&gt;inside&lt;/div&gt;
 &lt;/div&gt;</code>
                 </pre>
+                </div>
 
                 <h4>CSS</h4>
-                <pre>
+                <div class="code-container">
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        <svg class="copy-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                        </svg>
+                        Copy
+                    </button>
+                    <pre>
                     <code>
 .outside {
     display: grid;
     place-content: center;
 }</code>
                 </pre>
+                </div>
 
                 <h4>Example</h4>
 
@@ -334,15 +517,32 @@
                 <h3>Using absolute positioning</h3>
 
                 <h4>HTML</h4>
-                <pre>
+                <div class="code-container">
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        <svg class="copy-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                        </svg>
+                        Copy
+                    </button>
+                    <pre>
                     <code>
 &lt;div class="outside"&gt;
     &lt;div class="inside"&gt;inside&lt;/div&gt;
 &lt;/div&gt;</code>
                 </pre>
+                </div>
 
                 <h4>CSS</h4>
-                <pre>
+                <div class="code-container">
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        <svg class="copy-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                        </svg>
+                        Copy
+                    </button>
+                    <pre>
                     <code>
 .outside {
     width: 400px;
@@ -361,6 +561,7 @@
     transform: translate(-50%, -50%);
 }</code>
                 </pre>
+                </div>
 
                 <h4>Example</h4>
 
@@ -374,7 +575,15 @@
                 <h3>Using the browser window</h3>
 
                 <h4>CSS</h4>
-                <pre>
+                <div class="code-container">
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        <svg class="copy-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                        </svg>
+                        Copy
+                    </button>
+                    <pre>
                     <code>                        
 .element {
     position: fixed;
@@ -382,21 +591,39 @@
     margin: auto;
 }</code>
                 </pre>
+                </div>
             </div>
 
             <div class="method-card seventh-way">
                 <h3>Using text alignment</h3>
 
                 <h4>HTML</h4>
-                <pre>
+                <div class="code-container">
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        <svg class="copy-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                        </svg>
+                        Copy
+                    </button>
+                    <pre>
                     <code>
 &lt;div class="outside"&gt;
     &lt;div class="inside"&gt;inside&lt;/div&gt;
 &lt;/div&gt;</code>
                 </pre>
+                </div>
 
                 <h4>CSS</h4>
-                <pre>
+                <div class="code-container">
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        <svg class="copy-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                        </svg>
+                        Copy
+                    </button>
+                    <pre>
                     <code>
 .outside {
     width: 400px;
@@ -410,6 +637,7 @@
     line-height: 400px;
 }</code>
                 </pre>
+                </div>
 
                 <h4>Example</h4>
 
@@ -419,8 +647,85 @@
 
 
             </div>
+
+            <div class="method-card">
+
+                <h3>Compatibility</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th>Chrome</th>
+                            <th>Firefox</th>
+                            <th>Safari</th>
+                            <th>Edge</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Method">Using flexbox</td>
+                            <td data-label="Chrome" class="supported">Yes</td>
+                            <td data-label="Firefox" class="supported">Yes</td>
+                            <td data-label="Safari" class="supported">Yes</td>
+                            <td data-label="Edge" class="supported">Yes</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Method">Using flexible display</td>
+                            <td data-label="Chrome" class="supported">Yes</td>
+                            <td data-label="Firefox" class="supported">Yes</td>
+                            <td data-label="Safari" class="supported">Yes</td>
+                            <td data-label="Edge" class="supported">Yes</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Method">Using margin-inline</td>
+                            <td data-label="Chrome" class="supported">Yes</td>
+                            <td data-label="Firefox" class="supported">Yes</td>
+                            <td data-label="Safari" class="supported">Yes</td>
+                            <td data-label="Edge" class="supported">Yes</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Method">Using grid</td>
+                            <td data-label="Chrome" class="supported">Yes</td>
+                            <td data-label="Firefox" class="supported">Yes</td>
+                            <td data-label="Safari" class="supported">Yes</td>
+                            <td data-label="Edge" class="supported">Yes</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Method">Using absolute positioning</td>
+                            <td data-label="Chrome" class="supported">Yes</td>
+                            <td data-label="Firefox" class="supported">Yes</td>
+                            <td data-label="Safari" class="supported">Yes</td>
+                            <td data-label="Edge" class="supported">Yes</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Method">Using the browser window</td>
+                            <td data-label="Chrome" class="supported">Yes</td>
+                            <td data-label="Firefox" class="supported">Yes</td>
+                            <td data-label="Safari" class="supported">Yes</td>
+                            <td data-label="Edge" class="supported">Yes</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Method">Using text-alignment</td>
+                            <td data-label="Chrome" class="supported">Yes</td>
+                            <td data-label="Firefox" class="supported">Yes</td>
+                            <td data-label="Safari" class="supported">Yes</td>
+                            <td data-label="Edge" class="supported">Yes</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <span>Should I add a method, so anyone can upload their own CSS snippets?</span>
+                <span>If yes, write a comment on github on the index.html file or if you're in the Summer of Making, DM
+                    me (BrunoGC13)</span>
+                <br>
+                <button id="upBtn"><a href="https://github.com/BrunoGC13" style="text-decoration: none; color: black;">Visit my GitHub</a></button>
+            </div>
+
         </div>
     </div>
+
+    <button id="upBtn"><a href="" style="text-decoration: none;">⬆️</a></button>
 
     <script>
         const element = document.getElementById("div-text");
@@ -432,6 +737,42 @@
             element.style.color = colors[index % colors.length];
             index++;
         }, 200);
+
+        function copyCode(button) {
+            const codeContainer = button.parentElement;
+            const codeElement = codeContainer.querySelector('code');
+            const textToCopy = codeElement.textContent;
+
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    showCopySuccess(button);
+                });
+            } else {
+                // Fallback für ältere Browser
+                fallbackCopy(textToCopy, button);
+            }
+        }
+
+        function showCopySuccess(button) {
+            button.classList.add('copied');
+            button.innerHTML = `
+        <svg class="copy-icon" viewBox="0 0 24 24">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+        </svg>
+        Copied!
+    `;
+
+            setTimeout(() => {
+                button.classList.remove('copied');
+                button.innerHTML = `
+            <svg class="copy-icon" viewBox="0 0 24 24">
+                <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+            Copy
+        `;
+            }, 2000);
+        }
+
     </script>
 
 </body>
