@@ -5,7 +5,7 @@ It features 7 different ways on how to center a DIV.
 
 ## 🤖 This project uses AI
 
-THe design of the website (CSS) was done completely by AI, because I just can't design websites very well.
+The design of the website (CSS) was done completely by AI, because I can't design websites very well.
 
 ## 📜 Credits
 
